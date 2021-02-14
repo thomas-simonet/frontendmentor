@@ -17,14 +17,14 @@
           error = document.getElementById(el.attributes['aria-describedby'].value)
 
         if (el.validity.valueMissing) {
-          error.innerHTML = "Field \"" + label + "\" cannot be empty."
+          error.innerHTML = "Oops! Please add your email"
           el.parentElement.classList.add('has-error')
           formState.push(0)
         }
         else {
           console.log(el.validity)
           if (el.type === "email" && (el.validity.patternMismatch || el.validity.typeMismatch)) {
-            error.innerHTML = "Please provide a valid email address."
+            error.innerHTML = "Oops! Please check your email."
             el.parentElement.classList.add('has-error')
             formState.push(0)
           }

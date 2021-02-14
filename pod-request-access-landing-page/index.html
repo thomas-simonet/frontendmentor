@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="./assets/styles/style.css">
+
+  <title>Frontend Mentor | Pod request access landing page</title>
+</head>
+
+<body>
+
+  <a href="#content" class="sr-only">Skip to main content</a>
+
+  <main class="main">
+
+    <header class="header">
+      <a href="/" class="logo" rel="home">
+        <img src="./assets/images/desktop/logo.svg" alt="Pod">
+      </a>
+    </header>
+
+    <div id="#content" class="content">
+
+      <h1 class="main-title">Publish your podcasts <span>everywhere.</span></h1>
+
+      <p class="pickup-line">Upload your audio to Pod with a single click. We’ll then distribute your podcast to
+        Spotify, Apple Podcasts, Google Podcasts, Pocket Casts and more!</p>
+
+      <div class="platforms-list">
+        <img src="./assets/images/desktop/spotify.svg" alt="Spotify">
+        <img src="./assets/images/desktop/apple-podcast.svg" alt="Apple Podcast">
+        <img src="./assets/images/desktop/google-podcasts.svg" alt="Google Podcasts">
+        <img src="./assets/images/desktop/pocket-casts.svg" alt="Pocket Cast">
+      </div>
+
+      <form class="form" action="#" data-validation="true" novalidate>
+
+        <input id="email" type="email" name="email" placeholder="Email address"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required aria-label="Email" aria-describedby="invalid-email"
+          aria-required="true">
+        <a id="invalid-email" class="input-error" href="#email"></a>
+
+        <button type="submit">Request access</button>
+
+      </form>
+
+    </div>
+
+  </main>
+
+  <div id="dots" aria-hidden="true">&nbsp;</div>
+
+  <script src="./assets/js/app.js"></script>
+
+</body>
+
+</html>

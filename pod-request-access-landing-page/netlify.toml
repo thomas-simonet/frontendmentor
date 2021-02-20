@@ -1,7 +1,4 @@
 [build]
-
   base = "pod-request-access-landing-page/"
-
   command = "echo 'DEPLOY pod-request-access-landing-page'"
-
   ignore = "git diff --quiet HEAD^ HEAD"

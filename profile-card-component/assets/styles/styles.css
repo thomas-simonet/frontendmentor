@@ -1,0 +1,172 @@
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --darker-blue: hsl(229, 23%, 23%);
+  --dark-gray-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: #19A1AE;
+  overflow: hidden;
+}
+
+
+/* CARD */
+
+.card {
+  position: relative;
+  width: 326px;
+  margin: 0 auto;
+  padding-top: 0.1px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25), 0 50px 100px -20px rgba(8, 70, 94, .50);
+}
+
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 140px;
+
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+  background-image: url("../images/bg-pattern-card.svg");
+}
+
+
+.card__thumbnail,
+.card__content {
+  text-align: center;
+}
+
+.card__thumbnail {
+  position: relative;
+  z-index: 1;
+  
+  margin-top: 92px;
+  margin-bottom: 24px;
+}
+
+.card__thumbnail img {
+  border: 5px solid #fff;
+  border-radius: 50%;
+}
+
+
+.card__content {
+  margin-bottom: 24px;
+  font-family: "Kumbh Sans";
+}
+
+
+.card__title {
+  margin-bottom: 13px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2E3349;
+}
+
+.card__title span {
+  margin-left: 8.5px;
+  font-weight: 400;
+  color: #6B7082;
+}
+
+
+.card__address {
+  color: #6B7082;
+}
+
+
+.card__social {
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-top: 1px solid #E8E9EC;
+}
+
+.card__social > div {
+  font-family: "Kumbh Sans";
+  text-align: center;
+}
+
+.card__social > div:nth-of-type(1) { margin-right: 38px; }
+.card__social > div:nth-of-type(2) { margin-right: 46px; }
+
+.card__social > div > :first-child { 
+  display: block;
+  margin-bottom: 9px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #2E3349;
+}
+
+.card__social > div > :last-child {
+  font-size: 10px;
+  color: #6B7082;
+  letter-spacing: 1.5px;
+}
+
+/* END CARD */
+
+
+body::after,
+body::before {
+  content: "";
+  position: absolute;
+  width: 662px;
+  height: 662px;
+  background-size: contain;
+}
+
+body::before {
+  right: 43.5%;
+  bottom: 60%;
+  background-image: url(../images/bg-pattern-top.svg);
+}
+
+body::after {
+  top: 53.5%;
+  left: 44%;
+  z-index: -1;
+  background-image: url(../images/bg-pattern-bottom.svg);
+}
+
+@media screen and (min-width: 1440px) {
+
+  body::before,
+  body::after {
+    width: 978px;
+    height: 978px;
+  }
+
+  body::before {
+    right: 52%;
+    bottom: 35%;
+  }
+
+  body::after {
+    top: 52%;
+    left: 48%;
+  }
+
+  .card {
+    box-shadow: 0 50px 100px -20px rgba(8, 70, 94, .50);
+  }
+}

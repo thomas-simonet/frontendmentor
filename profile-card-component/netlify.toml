@@ -2,4 +2,4 @@
   base = "profile-card-component/"
   publish = "profile-card-component/"
   command = "echo 'DEPLOY profile-card-component'"
-  ignore = "git diff --quiet HEAD^ HEAD"
+  ignore = "git diff --quiet HEAD^ HEAD ."

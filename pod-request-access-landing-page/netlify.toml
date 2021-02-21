@@ -1,4 +1,3 @@
 [build]
-  base = "pod-request-access-landing-page/"
-  publish = "pod-request-access-landing-page/"
+  base = "pod-request-access-landing-page"
   ignore = "git diff --quiet HEAD^ HEAD ."

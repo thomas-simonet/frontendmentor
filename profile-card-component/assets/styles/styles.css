@@ -1,8 +1,8 @@
 :root {
-  --dark-cyan: hsl(185, 75%, 39%);
-  --darker-blue: hsl(229, 23%, 23%);
-  --dark-gray-blue: hsl(227, 10%, 46%);
-  --dark-gray: hsl(0, 0%, 59%);
+  --dark-cyan: #19a2ae;
+  --darker-blue: #2d3248;
+  --dark-gray-blue: #6a6f81;
+  --dark-gray: #969696;
 }
 
 *,
@@ -15,7 +15,7 @@ body {
   display: grid;
   place-items: center;
   min-height: 100vh;
-  background-color: #19A1AE;
+  background-color: var(--dark-cyan);
   overflow: hidden;
 }
 

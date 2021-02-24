@@ -3,8 +3,8 @@
 
 ## Pod request access landing page
 [Code](https://github.com/thomas-simonet/frontendmentor/tree/main/pod-request-access-landing-page)
-[Live](https://infallible-kirch-1b9cf9.netlify.app)
+[Live](https://massim-pod-request-access-landing-page.netlify.app)
 
 ## Profile card component
 [Code](https://github.com/thomas-simonet/frontendmentor/tree/main/profile-card-component)
-[Live](#)
+[Live](https://massim-profile-card-component.netlify.app)

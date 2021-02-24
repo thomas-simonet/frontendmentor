@@ -40,10 +40,8 @@ body {
   right: 0;
   left: 0;
   height: 140px;
-
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-
   background-image: url("../images/bg-pattern-card.svg");
 }
 

@@ -8,41 +8,40 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault()
 
-      var formState = [],
-        isFormValid = ''
+      var isValid = true
 
       inputs.forEach(function (el) {
 
-        var label = el.attributes['aria-label'].value,
-          error = document.getElementById(el.attributes['aria-describedby'].value)
+        var error = document.getElementById(el.id + '-error')
 
-        if (el.validity.valueMissing) {
-          error.innerHTML = "Oops! Please add your email"
-          el.parentElement.classList.add('has-error')
-          formState.push(0)
+        if (!error) return
+
+
+        if (!el.validity.valid) {
+          el.classList.add('has-error')
+          el.setAttribute('aria-describedby', el.id + '-error')
+          el.setAttribute('aria-invalid', true)
+
+          if (el.validity.valueMissing) {
+            error.innerHTML = "Oops! Please add your email"
+          }
+          else if (el.type === "email" && (el.validity.patternMismatch || el.validity.typeMismatch)) {
+            error.innerHTML = "Oops! Please check your email."
+          }
+
+          isValid = false
         }
         else {
-          console.log(el.validity)
-          if (el.type === "email" && (el.validity.patternMismatch || el.validity.typeMismatch)) {
-            error.innerHTML = "Oops! Please check your email."
-            el.parentElement.classList.add('has-error')
-            formState.push(0)
-          }
-        }
-
-        if (el.validity.valid) {
           error.innerHTML = ""
           error.classList.remove('has-error')
-          formState.push(1)
+          el.removeAttribute('aria-describedby')
+          el.removeAttribute('aria-invalid')
         }
       })
 
-      isFormValid = formState.reduce(function (previousValue, currentValue) {
-        return previousValue + currentValue
-      })
-
-      if (isFormValid === inputs.length)
+      if (isValid) {
         alert("Thanks for requesting access !")
+      }
     })
   })
 });

@@ -28,7 +28,7 @@
       </a>
     </header>
 
-    <div id="#content" class="content">
+    <div id="content" class="content">
 
       <h1 class="main-title">Publish your podcasts <span>everywhere.</span></h1>
 
@@ -45,9 +45,8 @@
       <form class="form" action="#" data-validation="true" novalidate>
 
         <input id="email" type="email" name="email" placeholder="Email address"
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required aria-label="Email" aria-describedby="invalid-email"
-          aria-required="true">
-        <a id="invalid-email" class="input-error" href="#email"></a>
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" aria-label="Email" aria-required="true" required>
+        <span id="email-error" class="input-error"></span>
 
         <button type="submit">Request access</button>
 

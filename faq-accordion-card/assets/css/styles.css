@@ -32,6 +32,7 @@ main {
   padding-top: .1px;
 }
 
+
 .faq {
   position: relative;
   margin: 148px 0 85px;
@@ -40,13 +41,16 @@ main {
   border-radius: 23px;
   box-shadow: 0 50px 50px -20px rgba(53, 18, 122, 50%);
 }
-
-.faq::before {
+.faq::before,
+.faq::after {
   content: "";
   position: absolute;
-  top: -108px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.faq::before {
+  top: -108px;
 
   width: 237px;
   height: 180px;
@@ -56,11 +60,7 @@ main {
 }
 
 .faq::after {
-  content: "";
-  position: absolute;
   top: -41px;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 10;
 
   width: 240px;
@@ -69,6 +69,11 @@ main {
   background-image: url(../images/bg-pattern-mobile.svg);
   background-repeat: no-repeat;
   background-position: bottom;
+}
+
+.faq-bg-top,
+.faq-bg-bottom {
+  display: none;
 }
 
 .faq h1 {
@@ -133,7 +138,7 @@ main {
   color: var(--dark-grayish-blue);
 }
 
-.faq hr {
+.faq .sep {
   margin-top: 1em;
   margin-bottom: 1em;
 
@@ -142,20 +147,45 @@ main {
 
 @media screen and (min-width: 1144px) {
 
+  body {
+    display: grid;
+    place-items: center;
+  }
+
   .faq {
-    max-width: 920px;
-    width: 100%;
+    width: 920px;
     height: 509px;
 
-    margin: 129px auto 0;
+    margin: 0 auto;
     padding: .1px 111px 85px 475px;
   }
 
-  .faq:before {
+  .faq:before,
+  .faq:after { content: none; }
+
+  .faq-bg-top,
+  .faq-bg-bottom {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 445px;
+  }
+
+  .faq-bg-top { overflow: hidden; }
+
+  .faq-bg-top:before,
+  .faq-bg-top:after,
+  .faq-bg-bottom:before {
+    content: "";
+    position: absolute;
+  }
+
+  .faq-bg-top:after {
     top: 70px;
     left: -84px;
-    z-index: 11;
-    transform: none;
+    z-index: 1;
 
     width: 472px;
     height: 359px;
@@ -163,21 +193,7 @@ main {
     background-image: url(../images/illustration-woman-online-desktop.svg);
   }
 
-  .faq:after { content: none; }
-
-  .faq-bg-bottom {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 445px;
-    overflow: hidden;
-  }
-
-  .faq-bg-bottom:after {
-    content: "";
-
-    position: absolute;
+  .faq-bg-top:before {
     top: -294px;
     left: -576px;
 
@@ -187,11 +203,30 @@ main {
     background-image: url(../images/bg-pattern-desktop.svg);
   }
 
+  .faq-bg-bottom:before {
+    top: 206px;
+    left: -45px;
+    z-index: 2;
+
+    width: 90px;
+    height: 109px;
+
+    background-image: url(../images/illustration-box-desktop.svg);
+    background-position: top center;
+  }
+
   .faq h1 {
     margin-top: 65px;
     margin-bottom: 43px;
     text-align: left;
   }
 
-  .faq button { font-size: 14px; }
+  .faq dl { width: 350px; }
+
+  .faq button {
+    font-size: 14px;
+    padding-right: 32px;
+  }
+
+  .faq button:after { right: 16px; }
 }

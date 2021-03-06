@@ -1,0 +1,260 @@
+$very-dark-magenta: hsl(300, 43%, 22%);
+$soft-pink: hsl(333, 80%, 67%);
+$dark-grayish-magenta: hsl(303, 10%, 53%);
+$light-grayish-magenta: hsl(300, 24%, 96%);
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  font-family: "Spartan";
+  font-size: 15px;
+
+  &:before,
+  &:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  &:before {
+    content: url(../images/bg-pattern-top-mobile.svg);
+    top: 0;
+  }
+
+  @media screen and (min-width: 584px) {
+    &:before {
+      content: url(../images/bg-pattern-top-desktop.svg);
+    }
+  }
+
+  &:after {
+    content: url(../images/bg-pattern-bottom-mobile.svg);
+    bottom: 0;
+    height: 405px;
+    overflow: hidden;
+    z-index: -1;  
+  }
+
+  @media screen and (min-width: 376px) {
+    &:after {
+      left: auto;
+      content: url(../images/bg-pattern-bottom-desktop.svg);
+      height: 673px;
+    }
+  }  
+}
+
+main {
+  margin: 0 24px;
+
+  @media screen and (min-width: 1158px) {
+    margin: 0 auto;
+  }
+}
+
+.social-proof {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+
+  padding: 80px 0 84px;
+
+  @media screen and (min-width: 1040px) {
+    justify-content: space-between;
+    padding-top: 127px;
+  }
+
+
+  header {
+    max-width: 445px;
+    width: 100%;
+
+    margin-bottom: 40px;
+    text-align: center;
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 18px;
+
+      font-size: 32px;
+      line-height: 32px;
+      letter-spacing: -1.14px;
+      color: $very-dark-magenta;
+    }
+
+    p {
+      margin-bottom: 0;
+
+      font-weight: 500;
+      line-height: 25px;
+      letter-spacing: -0.5px;
+      color: $dark-grayish-magenta;
+    }
+
+    @media screen and (min-width: 500px) {
+      text-align: left;
+
+      h1 {
+        margin-bottom: 0;
+
+        font-size: 48px;
+        line-height: 48px;
+        letter-spacing: -1.71px;
+      }
+    }
+
+    @media screen and (min-width: 1040px) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.social-proof__reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 540px;
+  width: 100%;
+
+  margin-bottom: 50px;
+
+  @media screen and (min-width: 1040px) {
+    margin-top: 18px;
+    margin-bottom: 0;
+  }
+}
+
+.social-proof__review {
+  max-width: 445px;
+  width: 100%;
+
+  padding: 1rem;
+
+  text-align: center;
+  background-color: $light-grayish-magenta;
+  border-radius: 8px;
+
+  > span {
+    font-size: 13px;
+    font-weight: 700;
+    color: $very-dark-magenta;
+  }
+
+  & + & { margin-top: 1rem; }
+
+  @media screen and (min-width: 600px) {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    
+    .star { margin: 0 32px 0; }
+
+    &:nth-child(1) { align-self: start; }
+    &:nth-child(2) { align-self: center; }
+    &:nth-child(3) { align-self: flex-end; }
+  }
+}
+
+.star {
+  margin-bottom: 16px;
+
+  span {
+    display: inline-block;
+    background-image: url(../images/icon-star.svg);
+    width: 17px;
+    height: 16px;
+  }
+
+  span:not(:last-child) { margin-right: 8.5px; }
+}
+
+.social-proof__testimonials {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+
+  @media screen and (min-width: 1040px) {
+    margin-top: 72px;
+  }
+
+  @media screen and (min-width: 1158px) {
+    justify-content: space-between;
+  }
+}
+
+.social-proof__testimonial {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 350px;
+
+  margin: 0 0 1rem;
+  padding: 40px 32px 32px;
+
+  background-color: $very-dark-magenta;
+  color: #fff;
+  border-radius: 8px;
+
+  blockquote {
+    margin: 26px 0 0;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.25px;
+  }
+
+  figcaption {
+    order: -1;
+    display: flex;
+    align-items: center;
+
+    font-size: 13px;
+
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    div { 
+      margin-left: 23px;
+      font-weight: 700;
+    }
+
+    div > span { 
+      display: block;
+      margin-top: 5px;
+    }
+
+    b {
+      font-weight: 400;
+      color: $soft-pink;
+    }
+  }
+
+  @media screen and (min-width: 1100px) {
+    padding-bottom: 40px;
+
+    &:nth-child(2) { margin-top: 1rem; }
+    &:nth-child(3) { margin-top: 2rem; }
+  }
+}

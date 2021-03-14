@@ -1,25 +1,22 @@
-; window.addEventListener("DOMContentLoaded", function (event) {
+window.addEventListener('DOMContentLoaded', () => {
+  const faq = document.getElementById('faq');
+  const faqButtons = faq.querySelectorAll('button');
 
-  var faq = document.getElementById('faq')
-  var faqButtons = faq.querySelectorAll('button')
+  faqButtons.forEach((el) => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
 
-  faqButtons.forEach(function (el) {
-
-    el.addEventListener('click', function (e) {
-      e.preventDefault()
-
-      var target = e.target
-      var def = document.getElementById(target.getAttribute('aria-controls'))
-      var isOpen = (target.getAttribute('aria-expanded') === 'true')
+      const { target } = e;
+      const def = document.getElementById(target.getAttribute('aria-controls'));
+      const isOpen = (target.getAttribute('aria-expanded') === 'true');
 
       if (!isOpen) {
-        target.setAttribute('aria-expanded', true)
-        def.style.display = "block"
+        target.setAttribute('aria-expanded', true);
+        def.style.display = 'block';
+      } else {
+        target.setAttribute('aria-expanded', false);
+        def.style.display = 'none';
       }
-      else {
-        target.setAttribute('aria-expanded', false)
-        def.style.display = "none"
-      }
-    })
-  })
+    });
+  });
 });

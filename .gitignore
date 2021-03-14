@@ -1,1 +1,4 @@
 .vscode
+dist
+dist-ssr
+node_modules
